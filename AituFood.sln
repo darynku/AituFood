@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34525.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AituFood", "AituFood.csproj", "{372A1D96-15BD-4181-BEDE-8133AE5672AA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{372A1D96-15BD-4181-BEDE-8133AE5672AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{372A1D96-15BD-4181-BEDE-8133AE5672AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{372A1D96-15BD-4181-BEDE-8133AE5672AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{372A1D96-15BD-4181-BEDE-8133AE5672AA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BFA6584E-9B0A-489E-9368-744D70498B95}
+	EndGlobalSection
+EndGlobal
