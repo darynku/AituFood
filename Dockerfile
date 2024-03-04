@@ -1,21 +1,25 @@
-FROM mcr.microsoft.com/dotnet/aspnet:8.0-nanoserver-1809 AS base
+#See https://aka.ms/customizecontainer to learn how to customize your debug container and how Visual Studio uses this Dockerfile to build your images for faster debugging.
+
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
+USER app
 WORKDIR /app
+EXPOSE 8080
+EXPOSE 8081
+EXPOSE 8000
 EXPOSE 44388
 
-ENV ASPNETCORE_URLS=http://+:44388
-
-FROM mcr.microsoft.com/dotnet/sdk:8.0-nanoserver-1809 AS build
-ARG configuration=Release
-WORKDIR /src
-COPY ["AituFood.csproj", "./"]
-RUN dotnet restore "AituFood.csproj"
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+ARG BUILD_CONFIGURATION=Realese
+WORKDIR /src 
+COPY ["AituFood.csproj", "."]
+RUN dotnet restore "./AituFood.csproj"
 COPY . .
 WORKDIR "/src/."
-RUN dotnet build "AituFood.csproj" -c $configuration -o /app/build
+RUN dotnet build "./AituFood.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish
-ARG configuration=Release
-RUN dotnet publish "AituFood.csproj" -c $configuration -o /app/publish /p:UseAppHost=false
+ARG BUILD_CONFIGURATION=Release
+RUN dotnet publish "./AituFood.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
